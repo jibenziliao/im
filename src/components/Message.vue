@@ -79,6 +79,7 @@ export default {
       .bubble-right {
         @include px2rem(left, 20px);
         @include px2rem(margin-left, 20px);
+        background-color: #868080;
       }
       .arrow {
         position: absolute;
@@ -92,7 +93,7 @@ export default {
       .arrow-left {
         @include px2rem(left, 20px);
         @include px2rem(border-right-width, 26px);
-        border-right-color: #5ACBFD;
+        border-right-color: #868080;
         border-left: none;
       }
       .arrow-right {

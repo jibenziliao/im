@@ -95,6 +95,18 @@ export default {
         name: '普通聊天',
         unique: true //  是否创建唯一对话，当其为 true 时，如果当前已经有相同成员的对话存在则返回该对话，否则会创建新的对话。
       })
+      this.userDelegate.on('message', message => {
+        console.log(message)
+        let tmpObj = {
+          isSelf: false,
+          content: message.content._lctext,
+          name: '李四',
+          avatar: 'http://7xjfsp.com2.z0.glb.qiniucdn.com/Fsm_eLBtEZw3VKaseqyCtDCvXaqR',
+          date: '2015-11-09 09:57:08'
+        }
+        this.msgs.push(tmpObj)
+        document.body.scrollTop = document.body.scrollHeight
+      })
       /* this.$realtime.createIMClient('Tom').then(tom => {
         // 创建与Jerry之间的对话
         return tom.createConversation({
@@ -118,8 +130,8 @@ export default {
         avatar: 'http://oatl31bw3.bkt.clouddn.com/735510dbjw8eoo1nn6h22j20m80m8t9t.jpg',
         date: '2015-11-09 09:57:08'
       }
-      document.body.scrollTop = document.body.scrollHeight
       this.msgs.push(tmpObj)
+      document.body.scrollTop = document.body.scrollHeight
     }
   },
   mounted () {
